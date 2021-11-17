@@ -56,6 +56,19 @@ export const FXRandomIntBetween = (min, max) => {
   return Math.floor(FXRandomBetween(min, max));
 };
 
+
+/**
+ * Returns a random integer between two numbers.
+ * ```
+ * FXRandomOption(["I", "are", "weasel"]); // "weasel"
+ * ```
+ * @param options - An array of options to choose from
+ */
+export const FXRandomOption = function (options) {
+  check();
+  return options[Math.floor(fxrand() * options.length)];
+};
+
 /**
  * Returns a vec2, expressed as an array, populated with random numbers 
  * ```
