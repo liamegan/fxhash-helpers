@@ -86,3 +86,24 @@ export const FXRandVec4 = () => {
   check();
   return [fxrand(), fxrand(), fxrand(), fxrand()];
 };
+
+/**
+ * Returns a weighted random option, given an array of options with weights.
+ * ```
+ * let color = getWeightedOption([
+ *   ["red", 10],
+ *   ["green", 30],
+ *   ["blue", 50],
+ * ]);
+ * ```
+ * Curtesy Mark Knol, T: @mknol
+ * @param options - options in the format of [ [ string: optionName, int: optionNumber ] ]
+ */
+const pick = (arr) => arr[(fxrand() * arr.length) | 0];
+export const getWeightedOption = function (options) {
+  check();
+  let choices = [];
+  for (let i in options)
+    choices = choices.concat(new Array(options[i][1]).fill(options[i][0]));
+  return pick(choices);
+};
