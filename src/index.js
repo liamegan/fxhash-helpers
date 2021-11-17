@@ -69,6 +69,20 @@ export const FXRandomOption = function (options) {
   return options[Math.floor(fxrand() * options.length)];
 };
 
+
+/**
+ * Returns a random boolean given a weight.
+ * ```
+ * FXRandomBool(.2); // false
+ * ```
+ * @param weight=.5 - A weight to test the boolean against, if fxrand is less than this number, true is returned. Defaults to 0.5
+ */
+export const FXRandomBool = function(weight) {
+  check();
+  if (isNaN(weight)) weight = .5;
+  return fxrand() < weight;
+};
+
 /**
  * Returns a vec2, expressed as an array, populated with random numbers 
  * ```
