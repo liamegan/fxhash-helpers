@@ -63,6 +63,7 @@ export const FXRandomIntBetween = (min, max) => {
  * ```
  */
 export const FXRandVec2 = () => {
+  check();
   return [fxrand(), fxrand()];
 };
 /**
@@ -72,6 +73,7 @@ export const FXRandVec2 = () => {
  * ```
  */
 export const FXRandVec3 = () => {
+  check();
   return [fxrand(), fxrand(), fxrand()];
 };
 /**
@@ -81,5 +83,6 @@ export const FXRandVec3 = () => {
  * ```
  */
 export const FXRandVec4 = () => {
+  check();
   return [fxrand(), fxrand(), fxrand(), fxrand()];
 };
