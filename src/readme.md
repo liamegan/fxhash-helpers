@@ -15,14 +15,16 @@ To get started with the library:
 
 ```
 // import
-import { FXInit, FXRandomBetween } from @liamegan1/fxhash-helpers
+import { FXInit, FXRandomBetween } from "@liamegan1/fxhash-helpers"
 
 // Make sure you call FXInit before using any of the helpers!
-FXInit( fxhash );
+FXInit( fxrand );
 
 // Good to go!
 const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 
 ```
+
+[Click here](https://codesandbox.io/s/peaceful-clarke-vu99h?file=/src/index.js) for a codesandbox demonstrating how this all works.
 
 ## Details
