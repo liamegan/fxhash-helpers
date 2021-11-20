@@ -25,24 +25,7 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 
 ```
 
-## Details
-
-## Members
-
-<dl>
-<dt><a href="#fxrand">fxrand</a></dt>
-<dd><p>Basic usage for this library is to import the FXInit function and then any of the other functions you might need.
-eg:</p>
-<pre><code>import { FXInit, FXRandomBetween } from &#39;fx-helpers&#39;;
-
-FXInit(fxhash); // Always init the helpers with the hash provided by the boilerplate.
-
-const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
-</code></pre>
-</dd>
-</dl>
-
-## Constants
+## Details## Constants
 
 <dl>
 <dt><a href="#FXInit">FXInit</a></dt>
@@ -103,21 +86,6 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 </dd>
 </dl>
 
-<a name="fxrand"></a>
-
-## fxrand
-Basic usage for this library is to import the FXInit function and then any of the other functions you might need.
-eg:
-```
-import { FXInit, FXRandomBetween } from 'fx-helpers';
-
-FXInit(fxhash); // Always init the helpers with the hash provided by the boilerplate.
-
-const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
-
-```
-
-**Kind**: global variable  
 <a name="FXInit"></a>
 
 ## FXInit

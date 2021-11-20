@@ -1,17 +1,6 @@
 /**
- * Basic usage for this library is to import the FXInit function and then any of the other functions you might need.
- * eg:
- * ```
- * import { FXInit, FXRandomBetween } from 'fx-helpers';
- * 
- * FXInit(fxhash); // Always init the helpers with the hash provided by the boilerplate.
- * 
- * const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
- * 
- * ```
+ * @ignore
  */
-
-
 let fxrand;
 
 /**
