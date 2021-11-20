@@ -1,0 +1,47 @@
+{
+  "name": "fxhash-helpers",
+  "version": "0.0.1",
+  "description": "A series of helper functions for FX Hash",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "umd:main": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "exports": {
+    ".": "./dist/index.modern.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist; npx microbundle",
+    "dev": "microbundle watch",
+    "prepare": "husky install; npm run build",
+    "document": "cat src/readme.md > README.md && npx jsdoc2md src/index.js >> README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamegan/JSBluenoise.git"
+  },
+  "author": "Liam Egan <liam@wethecollective.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liamegan/JSBluenoise/issues"
+  },
+  "homepage": "https://github.com/liamegan/JSBluenoise#readme",
+  "devDependencies": {
+    "husky": "^7.0.2",
+    "microbundle": "^0.13.3",
+    "jsdoc-to-markdown": "^7.1.0",
+    "prettier": "^2.4.0"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80
+  },
+  "dependencies": {
+    "@liamegan1/le-utils": "0.0.1",
+    "le-jsgrid": "0.0.2",
+    "wtc-math": "^1.0.14"
+  }
+}
