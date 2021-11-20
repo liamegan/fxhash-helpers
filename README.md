@@ -15,7 +15,7 @@ To get started with the library:
 
 ```
 // import
-import { FXInit, FXRandomBetween } from fxhash-helpers
+import { FXInit, FXRandomBetween } from @liamegan1/fxhash-helpers
 
 // Make sure you call FXInit before using any of the helpers!
 FXInit( fxhash );
