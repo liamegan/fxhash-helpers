@@ -40,31 +40,31 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 </dd>
 <dt><a href="#FXRandomIntBetween">FXRandomIntBetween</a></dt>
 <dd><p>Returns a random integer between two numbers.</p>
-<pre><code>FXRandomBetween(-10, 10); // 2
+<pre><code>FXRandomIntBetween(-10, 10); // 2
 </code></pre>
 </dd>
 <dt><a href="#FXRandomOption">FXRandomOption</a></dt>
-<dd><p>Returns a random integer between two numbers.</p>
+<dd><p>Returns a random option from a provided list of options.</p>
 <pre><code>FXRandomOption([&quot;I&quot;, &quot;are&quot;, &quot;weasel&quot;]); // &quot;weasel&quot;
 </code></pre>
 </dd>
 <dt><a href="#FXRandomBool">FXRandomBool</a></dt>
-<dd><p>Returns a random boolean given a weight.</p>
+<dd><p>Returns a random boolean given a weight (optional).</p>
 <pre><code>FXRandomBool(.2); // false
 </code></pre>
 </dd>
 <dt><a href="#FXRandVec2">FXRandVec2</a></dt>
-<dd><p>Returns a vec2, expressed as an array, populated with random numbers </p>
+<dd><p>Returns a 2-dimensional vector, expressed as an array, populated with random numbers </p>
 <pre><code>FXRandVec2(); // [.1234, .57351]
 </code></pre>
 </dd>
 <dt><a href="#FXRandVec3">FXRandVec3</a></dt>
-<dd><p>Returns a vec3, expressed as an array, populated with random numbers </p>
+<dd><p>Returns a 3-dimensional vector, expressed as an array, populated with random numbers </p>
 <pre><code>FXRandVec3(); // [.1234, .57351, .01234]
 </code></pre>
 </dd>
 <dt><a href="#FXRandVec4">FXRandVec4</a></dt>
-<dd><p>Returns a vec4, expressed as an array, populated with random numbers </p>
+<dd><p>Returns a 4-dimensional vector, expressed as an array, populated with random numbers </p>
 <pre><code>FXRandVec4(); // [.1234, .57351, .01234, .9634]
 </code></pre>
 </dd>
@@ -119,7 +119,7 @@ FXRandomBetween(-10, 10); // -1.234576
 ## FXRandomIntBetween
 Returns a random integer between two numbers.
 ```
-FXRandomBetween(-10, 10); // 2
+FXRandomIntBetween(-10, 10); // 2
 ```
 
 **Kind**: global constant  
@@ -132,7 +132,7 @@ FXRandomBetween(-10, 10); // 2
 <a name="FXRandomOption"></a>
 
 ## FXRandomOption
-Returns a random integer between two numbers.
+Returns a random option from a provided list of options.
 ```
 FXRandomOption(["I", "are", "weasel"]); // "weasel"
 ```
@@ -146,7 +146,7 @@ FXRandomOption(["I", "are", "weasel"]); // "weasel"
 <a name="FXRandomBool"></a>
 
 ## FXRandomBool
-Returns a random boolean given a weight.
+Returns a random boolean given a weight (optional).
 ```
 FXRandomBool(.2); // false
 ```
@@ -160,7 +160,7 @@ FXRandomBool(.2); // false
 <a name="FXRandVec2"></a>
 
 ## FXRandVec2
-Returns a vec2, expressed as an array, populated with random numbers 
+Returns a 2-dimensional vector, expressed as an array, populated with random numbers 
 ```
 FXRandVec2(); // [.1234, .57351]
 ```
@@ -169,7 +169,7 @@ FXRandVec2(); // [.1234, .57351]
 <a name="FXRandVec3"></a>
 
 ## FXRandVec3
-Returns a vec3, expressed as an array, populated with random numbers 
+Returns a 3-dimensional vector, expressed as an array, populated with random numbers 
 ```
 FXRandVec3(); // [.1234, .57351, .01234]
 ```
@@ -178,7 +178,7 @@ FXRandVec3(); // [.1234, .57351, .01234]
 <a name="FXRandVec4"></a>
 
 ## FXRandVec4
-Returns a vec4, expressed as an array, populated with random numbers 
+Returns a 4-dimensional vector, expressed as an array, populated with random numbers 
 ```
 FXRandVec4(); // [.1234, .57351, .01234, .9634]
 ```

@@ -35,7 +35,7 @@ export const FXRandomBetween = (min, max) => {
 /**
  * Returns a random integer between two numbers.
  * ```
- * FXRandomBetween(-10, 10); // 2
+ * FXRandomIntBetween(-10, 10); // 2
  * ```
  * @param min - The minimum value
  * @param max - The maximum value
@@ -47,7 +47,7 @@ export const FXRandomIntBetween = (min, max) => {
 
 
 /**
- * Returns a random integer between two numbers.
+ * Returns a random option from a provided list of options.
  * ```
  * FXRandomOption(["I", "are", "weasel"]); // "weasel"
  * ```
@@ -60,7 +60,7 @@ export const FXRandomOption = function (options) {
 
 
 /**
- * Returns a random boolean given a weight.
+ * Returns a random boolean given a weight (optional).
  * ```
  * FXRandomBool(.2); // false
  * ```
@@ -73,7 +73,7 @@ export const FXRandomBool = function(weight) {
 };
 
 /**
- * Returns a vec2, expressed as an array, populated with random numbers 
+ * Returns a 2-dimensional vector, expressed as an array, populated with random numbers 
  * ```
  * FXRandVec2(); // [.1234, .57351]
  * ```
@@ -83,7 +83,7 @@ export const FXRandVec2 = () => {
   return [fxrand(), fxrand()];
 };
 /**
- * Returns a vec3, expressed as an array, populated with random numbers 
+ * Returns a 3-dimensional vector, expressed as an array, populated with random numbers 
  * ```
  * FXRandVec3(); // [.1234, .57351, .01234]
  * ```
@@ -93,7 +93,7 @@ export const FXRandVec3 = () => {
   return [fxrand(), fxrand(), fxrand()];
 };
 /**
- * Returns a vec4, expressed as an array, populated with random numbers 
+ * Returns a 4-dimensional vector, expressed as an array, populated with random numbers 
  * ```
  * FXRandVec4(); // [.1234, .57351, .01234, .9634]
  * ```
