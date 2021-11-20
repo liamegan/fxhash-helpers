@@ -1,6 +1,6 @@
 {
   "name": "@liamegan1/fxhash-helpers",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A series of helper functions for FX Hash",
   "source": "src/index.js",
   "main": "dist/index.js",
@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liamegan/JSBluenoise.git"
+    "url": "git+https://github.com/liamegan/fxhash-helpers.git"
   },
   "author": "Liam Egan <liam@wethecollective.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liamegan/JSBluenoise/issues"
+    "url": "https://github.com/liamegan/fxhash-helpers/issues"
   },
-  "homepage": "https://github.com/liamegan/JSBluenoise#readme",
+  "homepage": "https://github.com/liamegan/fxhash-helpers#readme",
   "devDependencies": {
     "husky": "^7.0.2",
     "microbundle": "^0.13.3",
