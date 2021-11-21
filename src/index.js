@@ -33,7 +33,8 @@ export const FXRandomBetween = (min, max) => {
 };
 
 /**
- * Returns a random integer between two numbers.
+ * Returns a random integer between two numbers - min, and max exclusive of max.
+ * If you want it to be inclusive of max, set the upper number to a floating point number like 10.99
  * ```
  * FXRandomIntBetween(-10, 10); // 2
  * ```
