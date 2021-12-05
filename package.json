@@ -1,6 +1,6 @@
 {
   "name": "@liamegan1/fxhash-helpers",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A series of helper functions for FX Hash",
   "source": "src/index.js",
   "main": "dist/index.js",
