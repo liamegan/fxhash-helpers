@@ -104,6 +104,8 @@ export const FXRandVec4 = () => {
   return [fxrand(), fxrand(), fxrand(), fxrand()];
 };
 
+
+const pick = (arr) => arr[(fxrand() * arr.length) | 0];
 /**
  * Returns a weighted random option, given an array of options with weights.
  * ```
@@ -116,7 +118,6 @@ export const FXRandVec4 = () => {
  * Curtesy Mark Knol, T: @mknol
  * @param options - options in the format of [ [ string: optionName, int: optionNumber ] ]
  */
-const pick = (arr) => arr[(fxrand() * arr.length) | 0];
 export const getWeightedOption = function (options) {
   check();
   let choices = [];
