@@ -140,7 +140,7 @@ export const FXRandomGaussian = (samples) => {
   if(samples < 1 || isNaN(samples)) throw new Error('Samples should be a number greater than zero');
   var rn = 0;
   for (let i = 0; i < samples; i++) {
-    rn += rxrand()
+    rn += fxrand()
   }
   return rn / samples
 }
