@@ -27,7 +27,9 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 
 [Click here](https://codesandbox.io/s/peaceful-clarke-vu99h?file=/src/index.js) for a codesandbox demonstrating how this all works.
 
-## Details## Constants
+## Details
+
+## Constants
 
 <dl>
 <dt><a href="#FXInit">FXInit</a></dt>
@@ -39,7 +41,8 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 </code></pre>
 </dd>
 <dt><a href="#FXRandomIntBetween">FXRandomIntBetween</a></dt>
-<dd><p>Returns a random integer between two numbers.</p>
+<dd><p>Returns a random integer between two numbers - min, and max exclusive of max.
+If you want it to be inclusive of max, set the upper number to a floating point number like 10.99</p>
 <pre><code>FXRandomIntBetween(-10, 10); // 2
 </code></pre>
 </dd>
@@ -68,15 +71,7 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 <pre><code>FXRandVec4(); // [.1234, .57351, .01234, .9634]
 </code></pre>
 </dd>
-</dl>
-
-## Functions
-
-<dl>
-<dt><a href="#check">check()</a></dt>
-<dd><p>Checks for the existance of the FXHash PRNG and throws an error if it doesn&#39;t exist.</p>
-</dd>
-<dt><a href="#pick">pick(options)</a></dt>
+<dt><a href="#FXGetWeightedOption">FXGetWeightedOption</a></dt>
 <dd><p>Returns a weighted random option, given an array of options with weights.</p>
 <pre><code>let color = getWeightedOption([
   [&quot;red&quot;, 10],
@@ -85,6 +80,14 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 ]);
 </code></pre>
 <p>Curtesy Mark Knol, T: @mknol</p>
+</dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#check">check()</a></dt>
+<dd><p>Checks for the existance of the FXHash PRNG and throws an error if it doesn&#39;t exist.</p>
 </dd>
 </dl>
 
@@ -117,7 +120,8 @@ FXRandomBetween(-10, 10); // -1.234576
 <a name="FXRandomIntBetween"></a>
 
 ## FXRandomIntBetween
-Returns a random integer between two numbers.
+Returns a random integer between two numbers - min, and max exclusive of max.
+If you want it to be inclusive of max, set the upper number to a floating point number like 10.99
 ```
 FXRandomIntBetween(-10, 10); // 2
 ```
@@ -184,15 +188,9 @@ FXRandVec4(); // [.1234, .57351, .01234, .9634]
 ```
 
 **Kind**: global constant  
-<a name="check"></a>
+<a name="FXGetWeightedOption"></a>
 
-## check()
-Checks for the existance of the FXHash PRNG and throws an error if it doesn't exist.
-
-**Kind**: global function  
-<a name="pick"></a>
-
-## pick(options)
+## FXGetWeightedOption
 Returns a weighted random option, given an array of options with weights.
 ```
 let color = getWeightedOption([
@@ -203,9 +201,15 @@ let color = getWeightedOption([
 ```
 Curtesy Mark Knol, T: @mknol
 
-**Kind**: global function  
+**Kind**: global constant  
 
 | Param | Description |
 | --- | --- |
 | options | options in the format of [ [ string: optionName, int: optionNumber ] ] |
 
+<a name="check"></a>
+
+## check()
+Checks for the existance of the FXHash PRNG and throws an error if it doesn't exist.
+
+**Kind**: global function  
