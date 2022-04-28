@@ -1,6 +1,6 @@
 {
   "name": "@liamegan1/fxhash-helpers",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A series of helper functions for FX Hash",
   "source": "src/index.js",
   "main": "dist/index.js",
@@ -38,10 +38,5 @@
     "semi": false,
     "singleQuote": true,
     "printWidth": 80
-  },
-  "dependencies": {
-    "@liamegan1/le-utils": "0.0.1",
-    "le-jsgrid": "0.0.2",
-    "wtc-math": "^1.0.14"
   }
 }
