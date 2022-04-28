@@ -127,3 +127,18 @@ export const getWeightedOption = function (options) {
     choices = choices.concat(new Array(options[i][1]).fill(options[i][0]));
   return pick(choices);
 };
+
+/**
+ * Returns a gaussian distributed random number. Bear in mind that calling `FXRandomGaussian(5)` will result in 5 calls to fxrand();
+ * ```
+ * let gr = FXRandomGaussian(5);
+ * ```
+ * @param samples - The number of samples to use in the distribution. A higher sample number will result in a tighter bell-curve
+ */
+export const FXRandomGaussian = (samples) => { 
+  var rn = 0;
+  for (let i = 0; i < samples; i++) {
+    rn += rxrand()
+  }
+  return rn / samples
+}

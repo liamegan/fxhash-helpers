@@ -27,9 +27,7 @@ const randomAngle = FXRandomBetween(-Math.PI, Math.PI);
 
 [Click here](https://codesandbox.io/s/peaceful-clarke-vu99h?file=/src/index.js) for a codesandbox demonstrating how this all works.
 
-## Details
-
-## Constants
+## Details## Constants
 
 <dl>
 <dt><a href="#FXInit">FXInit</a></dt>
@@ -80,6 +78,11 @@ If you want it to be inclusive of max, set the upper number to a floating point 
 ]);
 </code></pre>
 <p>Curtesy Mark Knol, T: @mknol</p>
+</dd>
+<dt><a href="#FXRandomGaussian">FXRandomGaussian</a></dt>
+<dd><p>Returns a gaussian distributed random number. Bear in mind that calling <code>FXRandomGaussian(5)</code> will result in 5 calls to fxrand();</p>
+<pre><code>let gr = FXRandomGaussian(5);
+</code></pre>
 </dd>
 </dl>
 
@@ -206,6 +209,20 @@ Curtesy Mark Knol, T: @mknol
 | Param | Description |
 | --- | --- |
 | options | options in the format of [ [ string: optionName, int: optionNumber ] ] |
+
+<a name="FXRandomGaussian"></a>
+
+## FXRandomGaussian
+Returns a gaussian distributed random number. Bear in mind that calling `FXRandomGaussian(5)` will result in 5 calls to fxrand();
+```
+let gr = FXRandomGaussian(5);
+```
+
+**Kind**: global constant  
+
+| Param | Description |
+| --- | --- |
+| samples | The number of samples to use in the distribution. A higher sample number will result in a tighter bell-curve |
 
 <a name="check"></a>
 
