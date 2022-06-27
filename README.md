@@ -84,6 +84,16 @@ If you want it to be inclusive of max, set the upper number to a floating point 
 <pre><code>let gr = FXRandomGaussian(5);
 </code></pre>
 </dd>
+<dt><a href="#FXRandomReset">FXRandomReset</a></dt>
+<dd><p>Resets the fxhash prng either to a new, random hash, or to a supplied hash.
+Use this if you want to reset the prng to its original state by calling:</p>
+<pre><code>FXRandomReset(fxhash);
+</code></pre>
+<p>or to a new, random hash simply by calling </p>
+<pre><code>FXRandomReset();
+</code></pre>
+<p>Note that resetting to a random hash uses the existing fxhash prng, which means that random hashes are also deterministic.</p>
+</dd>
 </dl>
 
 ## Functions
@@ -223,6 +233,26 @@ let gr = FXRandomGaussian(5);
 | Param | Description |
 | --- | --- |
 | samples | The number of samples to use in the distribution. A higher sample number will result in a tighter bell-curve |
+
+<a name="FXRandomReset"></a>
+
+## FXRandomReset
+Resets the fxhash prng either to a new, random hash, or to a supplied hash.
+Use this if you want to reset the prng to its original state by calling:
+```
+FXRandomReset(fxhash);
+```
+or to a new, random hash simply by calling 
+```
+FXRandomReset();
+```
+Note that resetting to a random hash uses the existing fxhash prng, which means that random hashes are also deterministic.
+
+**Kind**: global constant  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newhash | <code>string</code> | [undefined] - A string value of the new hash to use. Mostly this parameter is used to reset the hash to the original. |
 
 <a name="check"></a>
 

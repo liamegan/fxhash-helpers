@@ -157,7 +157,7 @@ export const FXRandomGaussian = (samples) => {
  * ```
  * Note that resetting to a random hash uses the existing fxhash prng, which means that random hashes are also deterministic.
  *
- * @param samples - The number of samples to use in the distribution. A higher sample number will result in a tighter bell-curve
+ * @param newhash {string} [undefined] - A string value of the new hash to use. Mostly this parameter is used to reset the hash to the original.
  */
 export const FXRandomReset = (newhash) => {
   check()
