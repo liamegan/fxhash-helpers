@@ -16,7 +16,9 @@ export const FXInit = function(prng) {
  */
 const check = function() {
   if (typeof fxr !== "function")
-    throw new Error("fxhash has not been defined, did you call FXInit?");
+    if (typeof fxrand !== 'function')
+      throw new Error('fxhash has not been defined, did you call FXInit? Is the fx hash snippet included?')
+    else FXInit(fxrand)
 }
 
 /**
