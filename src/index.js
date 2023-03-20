@@ -1,24 +1,17 @@
 /**
- * @ignore
- */
-let fxr;
-
-/**
  * Initialises the library with a PRNG function. Most functions expect the PRNG to return 0-1 exclusive.
  * @param prng - The PRNG function to use for subsequent calls
  */
 export const FXInit = function(prng) {
-  if(typeof prng === 'function') fxr = prng;
+  if(typeof prng === 'function') $fx.rand = prng;
 }
 
 /**
  * Checks for the existance of the FXHash PRNG and throws an error if it doesn't exist.
  */
 const check = function() {
-  if (typeof fxr !== "function")
-    if (typeof fxrand !== 'function')
-      throw new Error('fxhash has not been defined, did you call FXInit? Is the fx hash snippet included?')
-    else FXInit(fxrand)
+  if (typeof $fx.rand !== "function")
+    throw new Error('fxhash has not been defined, did you call FXInit? Is the fx hash snippet included?')
 }
 
 /**
@@ -31,7 +24,7 @@ const check = function() {
  */
 export const FXRandomBetween = (min, max) => {
   check();
-  return min + (max - min) * fxr();
+  return min + (max - min) * $fx.rand();
 };
 
 /**
@@ -58,7 +51,7 @@ export const FXRandomIntBetween = (min, max) => {
  */
 export const FXRandomOption = function (options) {
   check();
-  return options[Math.floor(fxr() * options.length)];
+  return options[Math.floor($fx.rand() * options.length)];
 };
 
 
@@ -72,7 +65,7 @@ export const FXRandomOption = function (options) {
 export const FXRandomBool = function(weight) {
   check();
   if (isNaN(weight)) weight = .5;
-  return fxr() < weight;
+  return $fx.rand() < weight;
 };
 
 /**
@@ -83,7 +76,7 @@ export const FXRandomBool = function(weight) {
  */
 export const FXRandVec2 = () => {
   check();
-  return [fxr(), fxr()];
+  return [$fx.rand(), $fx.rand()];
 };
 /**
  * Returns a 3-dimensional vector, expressed as an array, populated with random numbers 
@@ -93,7 +86,7 @@ export const FXRandVec2 = () => {
  */
 export const FXRandVec3 = () => {
   check();
-  return [fxr(), fxr(), fxr()];
+  return [$fx.rand(), $fx.rand(), $fx.rand()];
 };
 /**
  * Returns a 4-dimensional vector, expressed as an array, populated with random numbers 
@@ -103,10 +96,10 @@ export const FXRandVec3 = () => {
  */
 export const FXRandVec4 = () => {
   check();
-  return [fxr(), fxr(), fxr(), fxr()];
+  return [$fx.rand(), $fx.rand(), $fx.rand(), $fx.rand()];
 };
 
-const pick = (arr) => arr[(fxr() * arr.length) | 0];
+const pick = (arr) => arr[($fx.rand() * arr.length) | 0];
 /**
  * Returns a weighted random option, given an array of options with weights.
  * ```
@@ -142,7 +135,7 @@ export const FXRandomGaussian = (samples) => {
   if(samples < 1 || isNaN(samples)) throw new Error('Samples should be a number greater than zero');
   var rn = 0;
   for (let i = 0; i < samples; i++) {
-    rn += fxr()
+    rn += $fx.rand()
   }
   return rn / samples
 }
@@ -162,13 +155,9 @@ export const FXRandomGaussian = (samples) => {
  * @param newhash {string} [undefined] - A string value of the new hash to use. Mostly this parameter is used to reset the hash to the original.
  */
 export const FXRandomReset = (newhash) => {
-  check()
-  // If a new hash is supplied, use that, otherwise generate a new one.
-  fxhash = newhash ? newhash : "oo" + Array(49).fill(0).map(_=>alphabet[(fxr()*alphabet.length)|0]).join('');
-  fxhashTrunc = fxhash.slice(2);
-  regex = new RegExp(".{" + ((fxhashTrunc.length/4)|0) + "}", 'g');
-  hashes = fxhashTrunc.match(regex).map(h => b58dec(h));
-  fxrand = sfc32(...hashes);
-  // Initialise the library with this reset
-  FXInit(fxrand);
+  // This PRNG courtesy of Piter Pasma
+  S=Uint32Array.of(9,7,5,3);
+  R=(a=1)=>a*(a=S[3],S[3]=S[2],S[2]=S[1],a^=a<<11,S[0]^=a^a>>>8^(S[1]=S[0])>>>19,S[0]/2**32);
+  [...newhash+'SOURCERY'].map(c=>R(S[3]^=c.charCodeAt()*23205));
+  FXInit(R);
 }
