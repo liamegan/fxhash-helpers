@@ -156,8 +156,8 @@ export const FXRandomGaussian = (samples) => {
  */
 export const FXRandomReset = (newhash) => {
   // This PRNG courtesy of Piter Pasma
-  S=Uint32Array.of(9,7,5,3);
-  R=(a=1)=>a*(a=S[3],S[3]=S[2],S[2]=S[1],a^=a<<11,S[0]^=a^a>>>8^(S[1]=S[0])>>>19,S[0]/2**32);
+  const S=Uint32Array.of(9,7,5,3);
+  const R=(a=1)=>a*(a=S[3],S[3]=S[2],S[2]=S[1],a^=a<<11,S[0]^=a^a>>>8^(S[1]=S[0])>>>19,S[0]/2**32);
   [...newhash+'SOURCERY'].map(c=>R(S[3]^=c.charCodeAt()*23205));
   FXInit(R);
 }
